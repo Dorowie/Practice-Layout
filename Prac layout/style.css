@@ -1,0 +1,224 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.landing {
+    height: 100vh;
+    background: url('bg.jfif') no-repeat center center/cover;
+    position: relative;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.9s ease;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    padding: 0px 50px;
+}
+
+.nav-logo img {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #f0a500;
+}
+
+.nav-book {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-book:hover {
+    background-color: #f0a500;
+    color: #fff;
+}
+
+section {
+
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#about, #rates, #rooms, #boat-rental, #gallery, #contact {
+    padding: 100px 50px;
+}
+
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#rates {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: #d8dad7;
+}
+
+#rates h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    cursor: grab;
+    display: flex;
+    gap: 50px;
+    overflow-x:scroll;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Show 3 items on the screen */
+    max-width: 300px; /* Optional max width for larger screens */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    transform: scale(1.1); /* Slightly smaller by default */
+}
+
+.carousel-item.active {
+    transform: scale(1.1); /* Enlarge the active (center) item */
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 250px; /* Consistent height */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.carousel-item .description {
+    padding: 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.carousel-item .price {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f0a500;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #about {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .about-image,
+    .about-text {
+        max-width: 100%;
+    }
+}
